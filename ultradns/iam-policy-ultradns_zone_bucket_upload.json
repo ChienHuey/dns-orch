@@ -1,0 +1,26 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowPutObjectS3UltraDNSZoneExtracts",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:PutObjectAcl"
+            ],
+            "Resource": [
+                "arn:aws:s3:::s3_bucket_where_backups_go/*"
+            ]
+        },
+        {
+            "Sid": "AllowAssumeRoleUltraDNSZoneUpload",
+            "Effect": "Allow",
+            "Action": [
+                "sts:AssumeRole"
+            ],
+            "Resource": [
+                "arn:aws:iam::your_aws_s3_iam_role"
+            ]
+        }
+    ]
+}
